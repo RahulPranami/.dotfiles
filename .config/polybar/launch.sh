@@ -6,7 +6,8 @@
 # Otherwise you can use the nuclear option:
 killall -q polybar
 
-polybar mybar 2>&1 | tee -a /tmp/polybar1.log & disown
+echo "---" | tee -a /tmp/polybar.log
+polybar mybar 2>&1 | tee -a /tmp/polybar.log & disown
 
-echo "Bars launched..."
+echo "Bar launched..."
 
