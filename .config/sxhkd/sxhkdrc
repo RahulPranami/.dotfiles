@@ -28,6 +28,10 @@ super + n
 super + F2
 	notify-send "TITLE"
 
+# Screenshot
+Print
+	flameshot gui
+
 # Volume 
 # how to set the name 
 # pactl info | grep "Default Sink"

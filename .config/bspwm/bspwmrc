@@ -13,6 +13,8 @@ xsetroot -cursor_name left_ptr
 picom --config ~/.config/picom/picom.conf
 $HOME/.config/polybar/launch.sh
 
+dunst &
+
 feh --bg-fill -z ~/Pictures
 # wal -i ~/.config/bspwm/wallpapers
 
