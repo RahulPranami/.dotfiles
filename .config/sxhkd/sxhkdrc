@@ -20,6 +20,14 @@ super + Escape
 super + shift + {w,r}
 	rofi -show {window, drun}
 
+# nmd
+super + n
+	networkmanager_dmenu
+
+# test
+super + F2
+	notify-send "TITLE"
+
 # Volume 
 # how to set the name 
 # pactl info | grep "Default Sink"
@@ -37,12 +45,19 @@ XF86MonBrightness{Up,Down}
 XF86KbdBrightness{Up,Down}
 	brightnessctl --device='asus::kbd_backlight' set 1{+,-}
 
-# Screenkey kill
-super + Print
-	killall screenkey
+## How to find Touchpad id 
+# xinput | grep Touchpad | awk '{print $6}' | sed 's/id=//'
+# TouchpadToggle
+XF86TouchpadToggle
+	xinput {disable, enable} $(xinput | grep Touchpad | awk '\{print $6\}' | sed 's/id=//') | notify-send "Touchpad"
+#	xinput set-prop $(xinput | grep Touchpad | awk '\{print $6\}' | sed 's/id=//') "Device Enabled" {0,1};\
+
+#	notify-send "Touchpad {disabled, enabled}"
+#	xinput set-prop 16 "Device Enabled" {0,1}
+
 # Screenkey
 Menu
-	screenkey
+	{screenkey,killall screenkey}
 
 # Custom Hotkeys End
 
