@@ -50,6 +50,8 @@ alias firewall=iptlist
 alias shutdown='sudo /sbin/shutdown'
 ## pass options to free ##
 alias meminfo='free -m -l -t'
+
+alias p5='ps -eo comm,pcpu --sort -pcpu | head -5;ps -eo comm,pmem --sort -pmem | head -5'
  
 ## get top process eating memory
 alias psmem='ps auxf | sort -nr -k 4'
